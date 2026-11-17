@@ -27,7 +27,7 @@ import java.io.PrintWriter;
  *
  * @author Amahle Lisah Khumalo
  */
-public class MovieTicketForm extends JFrame {
+public class MovieTicketForm extends JFrame { //beginning of class
 
     // The GUI components used on the form
     private JComboBox<String> cmbMovie;
