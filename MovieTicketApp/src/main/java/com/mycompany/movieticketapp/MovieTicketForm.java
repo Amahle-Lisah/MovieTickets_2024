@@ -1,14 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.movieticketapp;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Amahle Lisah Khumalo
  */
 public class MovieTicketForm extends javax.swing.JFrame {
+    
+    // This object does the calculating and validating for the form
+    private final MovieTickets movieTickets = new MovieTickets();
+
+
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MovieTicketForm.class.getName());
 
@@ -136,15 +142,82 @@ public class MovieTicketForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumberOfTicketsActionPerformed
 
     private void menuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemExitActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_menuItemExitActionPerformed
 
     private void menuItemProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProcessActionPerformed
-        // TODO add your handling code here:
+        processMovieTicket();
     }//GEN-LAST:event_menuItemProcessActionPerformed
+   
+// Called when the Process menu item is clicked.
+// It reads the form, validates it, calculates the total,
+// displays the report and saves it to report.txt.
+private void processMovieTicket() {
+    String movieName = (String) cmbMovie.getSelectedItem();
 
+    // The number of tickets and the ticket price must be numbers.
+    // If the user typed letters instead, show a message and stop.
+    int numberOfTickets;
+    double ticketPrice;
+
+    try {
+        numberOfTickets = Integer.parseInt(txtNumberOfTickets.getText().trim());
+        ticketPrice = Double.parseDouble(txtTicketPrice.getText().trim());
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this,
+                "Please enter a valid number of tickets and ticket price.");
+        return;
+    }
+  
+    // Put the captured data into one object, so it can be validated
+    MovieTicketData movieTicketData = new MovieTicketData(movieName, ticketPrice, numberOfTickets);
+
+    // Only valid data may be processed
+    if (!movieTickets.ValidateData(movieTicketData)) {
+        JOptionPane.showMessageDialog(this,
+                "Please enter a valid movie name, ticket price and number of tickets.");
+        return;
+    }
+
+    // Calculate the total ticket price, including VAT
+    double totalTicketPrice = movieTickets.CalculateTotalTicketPrice(numberOfTickets, ticketPrice);
+
+    // Build the report text in the same format as the sample
+    StringBuilder report = new StringBuilder();
+    report.append("MOVIE TICKET REPORT\n");
+    report.append("***********************************\n");
+    report.append("MOVIE NAME: ").append(movieName).append("\n");
+    report.append("MOVIE TICKET PRICE: R ").append(ticketPrice).append("\n");
+    report.append("NUMBER OF TICKETS: ").append(numberOfTickets).append("\n");
+    report.append("TOTAL TICKET PRICE: R ").append(totalTicketPrice).append("\n");
+    report.append("***********************************\n");
+
+    txtAreaReport.setText(report.toString());
+
+    // Save the same report to report.txt, straight after it is shown
+    saveReportToFile(report.toString());
+}
+
+// Writes the report text to a file named report.txt
+private void saveReportToFile(String reportText) {
+    // try-with-resources closes the file automatically when done
+    try (PrintWriter out = new PrintWriter(new FileWriter("report.txt"))) {
+        out.print(reportText);
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(this, "Could not save report.txt: " + ex.getMessage());
+    }
+}
+
+// Called when the Clear menu item is clicked.
+// It resets the form back to its default state.
+private void clearForm() {
+    cmbMovie.setSelectedIndex(0);
+    txtNumberOfTickets.setText("");
+    txtTicketPrice.setText("");
+    txtAreaReport.setText("");
+}
     private void menuItemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClearActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_menuItemClearActionPerformed
 
     /**
@@ -189,6 +262,14 @@ public class MovieTicketForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtNumberOfTickets;
     private javax.swing.JTextField txtTicketPrice;
     // End of variables declaration//GEN-END:variables
-}
+
+        private void processMovieTicket() {
+            clear.form
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
+
+
+
 
 
