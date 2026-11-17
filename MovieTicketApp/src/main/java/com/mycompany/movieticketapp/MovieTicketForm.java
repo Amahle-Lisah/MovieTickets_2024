@@ -217,7 +217,7 @@ private void clearForm() {
     txtAreaReport.setText("");
 }
     private void menuItemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClearActionPerformed
-
+     clearForm();
     }//GEN-LAST:event_menuItemClearActionPerformed
 
     /**
@@ -263,12 +263,9 @@ private void clearForm() {
     private javax.swing.JTextField txtTicketPrice;
     // End of variables declaration//GEN-END:variables
 
-        private void processMovieTicket() {
-            clear.form
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
         }
-    }
-
+   
 
 
 
