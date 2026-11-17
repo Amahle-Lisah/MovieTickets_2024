@@ -18,7 +18,7 @@ import java.awt.Component;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+ 
 /**
  * This is the window (JFrame) for the movie tickets application.
  * It only displays information and reads what the user typed -
@@ -161,7 +161,7 @@ public class MovieTicketForm extends JFrame { //beginning of class
 
         // Build the report text in the same format as the sample
         StringBuilder report = new StringBuilder();
-        report.append("MOVIE TICKET REPORT\n");
+        report.append("MOVIE TICKET REPORT\n"); 
         report.append("***********************************\n");
         report.append("MOVIE NAME: ").append(movieName).append("\n");
         report.append("MOVIE TICKET PRICE: R ").append(ticketPrice).append("\n");
@@ -192,13 +192,5 @@ public class MovieTicketForm extends JFrame { //beginning of class
         txtNumberOfTickets.setText("");
         txtTicketPrice.setText("");
         txtAreaReport.setText("");
-    }
-
-    // Starts the application
-    public static void main(String[] args) {
-        // This makes sure the window is built on the correct thread
-        java.awt.EventQueue.invokeLater(() -> {
-            new MovieTicketForm().setVisible(true);
-        });
     }
 }

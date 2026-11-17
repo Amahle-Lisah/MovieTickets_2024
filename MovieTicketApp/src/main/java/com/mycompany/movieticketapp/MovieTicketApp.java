@@ -1,16 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.movieticketapp;
 
 /**
  *
  * @author Amahle Lisah Khumalo
+ * This is the main method of the application, its starts the app
  */
-public class MovieTicketApp {
 
+public class MovieTicketApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        java.awt.EventQueue.invokeLater(() -> {
+            new MovieTicketForm().setVisible(true);
+        });
     }
 }
+
+
+
