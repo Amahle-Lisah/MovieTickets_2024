@@ -28,21 +28,124 @@ public class MovieTicketForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        cmbMovie = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        txtNumberOfTickets = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtTicketPrice = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaReport = new javax.swing.JTextArea();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menuItemExit = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        menuItemProcess = new javax.swing.JMenuItem();
+        menuItemClear = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("MOVIE");
+
+        cmbMovie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Napoleon", "Oppenheimer", "Damsel", " " }));
+
+        jLabel2.setText("NUMBER OF TICKETS");
+
+        txtNumberOfTickets.addActionListener(this::txtNumberOfTicketsActionPerformed);
+
+        jLabel3.setText("TICKET PRICE");
+
+        jLabel4.setText("TICKET REPORT:");
+
+        txtAreaReport.setEditable(false);
+        txtAreaReport.setColumns(20);
+        txtAreaReport.setRows(5);
+        jScrollPane1.setViewportView(txtAreaReport);
+
+        jMenu1.setText("File");
+
+        menuItemExit.setText("Exit");
+        menuItemExit.addActionListener(this::menuItemExitActionPerformed);
+        jMenu1.add(menuItemExit);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu4.setText("Tools");
+
+        menuItemProcess.setText("Process");
+        menuItemProcess.addActionListener(this::menuItemProcessActionPerformed);
+        jMenu4.add(menuItemProcess);
+
+        menuItemClear.setText("Clear");
+        menuItemClear.addActionListener(this::menuItemClearActionPerformed);
+        jMenu4.add(menuItemClear);
+
+        jMenuBar1.add(jMenu4);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtTicketPrice)
+                            .addComponent(txtNumberOfTickets)
+                            .addComponent(cmbMovie, 0, 209, Short.MAX_VALUE))))
+                .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cmbMovie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNumberOfTickets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtTicketPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNumberOfTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumberOfTicketsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumberOfTicketsActionPerformed
+
+    private void menuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemExitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemExitActionPerformed
+
+    private void menuItemProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProcessActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemProcessActionPerformed
+
+    private void menuItemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,6 +173,21 @@ public class MovieTicketForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbMovie;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem menuItemClear;
+    private javax.swing.JMenuItem menuItemExit;
+    private javax.swing.JMenuItem menuItemProcess;
+    private javax.swing.JTextArea txtAreaReport;
+    private javax.swing.JTextField txtNumberOfTickets;
+    private javax.swing.JTextField txtTicketPrice;
     // End of variables declaration//GEN-END:variables
 }
 
